@@ -1,0 +1,188 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Arsclassica Article
+% LaTeX Template
+% Version 1.1 (1/8/17)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Lorenzo Pantieri (http://www.lorenzopantieri.net) with extensive modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[
+10pt, % Main document font size
+a4paper, % Paper type, use 'letterpaper' for US Letter paper
+oneside, % One page layout (no page indentation)
+%twoside, % Two page layout (page indentation for binding and different headers)
+headinclude,footinclude, % Extra spacing for the header and footer
+BCOR5mm, % Binding correction
+]{scrartcl}
+
+\input{structure.tex} % Include the structure.tex file which specified the document structure and layout
+
+%----------------------------------------------------------------------------------------
+%	TITLE AND AUTHOR(S)
+%----------------------------------------------------------------------------------------
+
+\title{\normalfont\spacedallcaps{Conics and Hexagons}} % The article title
+
+%\subtitle{Subtitle} % Uncomment to display a subtitle
+
+\author{\spacedlowsmallcaps{Jake Faulkner}} % The article author(s) - author affiliations need to be specified in the AUTHOR AFFILIATIONS block
+
+\date{} % An optional date to appear under the author(s)
+
+%----------------------------------------------------------------------------------------
+\DeclareMathOperator*{\PG}{\mathrm{PG}}
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	HEADERS
+%----------------------------------------------------------------------------------------
+
+\renewcommand{\sectionmark}[1]{\markright{\spacedlowsmallcaps{#1}}} % The header for all pages (oneside) or for even pages (twoside)
+%\renewcommand{\subsectionmark}[1]{\markright{\thesubsection~#1}} % Uncomment when using the twoside option - this modifies the header on odd pages
+\lehead{\mbox{\llap{\small\thepage\kern1em\color{halfgray} \vline}\color{halfgray}\hspace{0.5em}\rightmark\hfil}} % The header style
+
+\pagestyle{scrheadings} % Enable the headers specified in this block
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS & LISTS OF FIGURES AND TABLES
+%----------------------------------------------------------------------------------------
+
+\maketitle % Print the title/author/date block
+
+\setcounter{tocdepth}{2} % Set the depth of the table of contents to show sections and subsections only
+
+\tableofcontents % Print the table of contents
+
+\listoffigures % Print the list of figures
+
+\listoftables % Print the list of tables
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT
+%----------------------------------------------------------------------------------------
+
+
+\lipsum[1] % Dummy text
+
+%----------------------------------------------------------------------------------------
+%	AUTHOR AFFILIATIONS
+%----------------------------------------------------------------------------------------
+
+\let\thefootnote\relax\footnotetext{* \textit{Department of Biology, University of Examples, London, United Kingdom}}
+
+\let\thefootnote\relax\footnotetext{\textsuperscript{1} \textit{Department of Chemistry, University of Examples, London, United Kingdom}}
+
+%----------------------------------------------------------------------------------------
+
+\newpage % Start the article content on the second page, remove this if you have a longer abstract that goes onto the second page
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION
+%----------------------------------------------------------------------------------------
+
+\section{Introduction}
+
+Blaise Pascal, who first postulated and proved Pascal's Theorem, is an example of a tale familiar to Mathematics. Pascal's father and tutor, Etienne Pascal, recognised his talent for mathematics at a young age but forbade his
+study of the subject for fear it would distract him from the classics. Forbidding mathematics appeared to have the opposite effect on Blaise, who taught himself mathematics anyway inventing his own notation and reinventing much of
+classical geometry. After being permitted by his father to study geometry through Euclid's Elements, the 16-year-old Blaise Pascal published his first mathematical work ``Essai pour les coniques'' (``Essay on Conics'') following a projective line of thinking pioneered by Desargues.
+The highlight of this essay was his statement of the (dual of) what will later be known as Pascal's Theorem, a statement which forms the foundation of this presentation. Pascal would go on to produce prolifically throughout his short life,
+contributing most notably to probability theory which he would produce the fundamentals of with Fermat. Pascal died young, at age 39, his impact on mathematics seen in the numerous theorems and phenomena named after him.
+
+\section{Pascal's Mystic Hexagram}
+
+Pascal's influence on geometry comes in the form of Pascal's Theorem, which makes the following statement about hexagons inscribed in conics,
+
+\begin{theorem}
+    Let \(\mathcal{C}\) be a non-empty conic in \(\PG(2, \mathbb{F})\), and suppose \(A, B, C, D, E, F\) are six points on \(\mathcal{C}\). Then the points
+    \(L = AE \cap BD\), \(M = BF \cap CE\) and \(N = AF \cap DC\) are collinear.
+\end{theorem}
+
+We call the line \(LMN\) a ``Pascal line''.
+
+\section{Steiner and Kirkman Points}
+
+Any permutation of the six points on the conic will also determine another Pascal line, and we can show that there are precisely 60 such hexagons that we may inscribe within the conic.
+To count them begin at the point \(A\) on the conic, and then traverse the points on the conic by following the lines that connect \(A\) to two other vertices. There are \((6 - 1)!\) orderings of the points \(B, C, D, E, F\) and for each ordering there is an equivalent ordering that
+corresponds to traversing the hexagon in the other direction. Hence there are \(\frac{\left( 6 - 1 \right)!}{2} = 60\) possible hexagons that can be inscribed in the conic and \(60\) possible pascal lines that can be determined from all of these hexagons.
+
+%
+% Figure here
+%
+
+In order to explain the next section we shall introduce the following notation to make the logic easier to follow. Given some permutation \(\sigma = \left( A B C D E F \right)\) denote the Pascal line determined by \(\sigma\) as \(l = \langle AE \cap BD, BF \cap CE, AF \cap CD \rangle\).
+We will now show that the 60 Pascal lines intersect three at a time in a set of 20 points which we call Steiner points after the Swiss geometer Jakob Steiner. We begin with an arrangement of six points on the conic, A, B, C, D, E, F and consider two triangles. The first triangle has sides \(AB\), \(CD\), and \(EF\), whilst the second has side lengths \(DE\), \(FA\), and \(BC\).
+Denote the vertices of the first and second triangle \(l, m, n\) and \(l^{\prime}, m^{\prime}, n^{\prime}\) respectively.
+
+%
+% Figure here
+%
+
+The triangles \(lmn\) and \(l^{\prime}m^{\prime}n^{\prime}\) are in perspective from a line, that is \(AB \cap DE\), \(AF \cap CD\) and \(BC \cap FE\) are in collinear with the Pascal line determined by \(\left( A E C D B F \right)\). Hence the lines joining \(l\) and \(l^{\prime}\), \(m\) and \(m^{\prime}\) and \(n\) and \(n^{prime}\) are concurrent by Desargues' Theorem.
+However these lines are precisely the Pascal's determined by \(\left( A C E B F D \right)\), \(\left( A E C D F B \right)\) and \(\left( A E C F B D \right)\) respectively, thus this point is the intersection of there Pascal lines and is one of our Steiner points.
+
+Kirkman points form by a similar manner. Consider again the points \(A, B, C, D, E, F\) on a conic. The Pascal lines \(P_{1}, P_{2}, P_{3}\) determined by \(\left( A E F D B C \right)\), \(\left( A C B D F E \right)\) and \(\left( A B F D E C \right)\) determine a triangle with vertices \(AC \cap DF\), \(AE \cap BD\) and \(BF \cap FE\).
+By comparing this triangle with the triangle with sides \(AB, CD, EF\) we see that \(P_{1}\) intersects \(AB\) at \(AB \cap DE\), \(P_{2}\) intersects \(CD\) at \(CD \cap AF\), and \(P_{3}\) intersects \(EF\) at \(EF \cap BC\). But \(AB \cap DE\), \(CD \cap AF\) and \(BC \cap EF\) lie on the pascal line \(\left( B D F E A C \right)\).
+Therefore the lines joining opposite vertices of the triangles, \(\langle AB \cap CD, BF \cap CE \rangle\), \(\langle CD \cap EF, AE \cap BD \rangle\), and \(\langle AB \cap EF, AC \cap DF \rangle\) must be concurrent. The joining lines are precisely the Pascal lines determined by \(\left( A C F D B E \right)\), \(\left( A D F B E C \right)\) and
+\(\left( A E D F B C \right)\). Similar analysis shows that on each Pascal line there are precisely three of these Kirkman points.
+
+\section{Cayley-Bacharach Theorom}
+
+Pascal himself proved his Theorem originally after the fashion of Euclid. Since his time we have developed new tools for looking at Mathematics differently and sometimes it is nice to revisit an old theorem with a fresh perspective.
+The Cayley-Bacharach Theorem is an interesting example of where a seemingly unconnected topic actually plays an important role in distant areas of Mathematics. We will work through the proof of the Cayley-Bacharach Theorem and then apply it to provide a short proof of Pascal's Theorem.
+
+To begin we will take the following important theorem in Algebraic Geometry for granted. Though it would be nice to prove this, it's a little out of scope and requires some different tools to what we have developed thus far. It is however a fairly easy statement to understand and not too hard to accept.
+
+\begin{theorem}[Bezout's Theorem]
+    Suppose we have two plane algebraic curves \(\gamma_{0}\) and \(\gamma_{1}\) in a field \(\mathbb{F}\) with degrees \(d_{0}\) and \(d_{1}\) sharing no common component. Then \(|\gamma_{0} \cap \gamma_{1}| \leq d_{0} d_{1}\).
+\end{theorem}
+
+Here a \textit{plane algebraic curve} is the zero set (in the projective plane) of a homogenous polynomial of degree \(d\). A conic is an algebraic curve of degree two, a line is an algebraic curve of degree one. Bezout's Theorem says that provided the curves do not share a common component, that is a subset of a curve that is itself also an algebraic curve, then we have a bound on the number of intersection points.
+Given a circle and a line in the plane, Bezout's Theorem says that these two algebraic curves intersect in at most two points. For our purposes the contrapositive is actually more interesting, that if two algebraic curves of degree \(d_{0}\) and \(d_{1}\) intersect in more than \(d_{0} d_{1}\) points then they must share a common component.
+As an example, if a conic and a line intersect in more than two points the line must be contained in the conic. We are now ready to state the Cayley-Bacharach Theorem,
+
+
+\begin{theorem}[Cayley-Bacharach Theorem]
+    Given two cubic algebraic curves \(\gamma_{0} = \{P_0(x, y) = 0\}\)  and \(\gamma_{\infty} = {P_\infty(x, y) = 0}\) that intersect in exactly 9 distinct points \(A_1, A_2, \ldots, A_9\), any cubic polynomial \(P\) vanishing at the first eight points must be a linear combination of \(P_{0}\) and \(P_{\infty}\)
+\end{theorem}
+\begin{proof}
+    Assume for the purposes of contradiction that \(P\) vanishes at \(A_{1}, A_{2}, \ldots A_{8}\) but is not a linear combination of \(P_0\) or \(P_{\infty}\). We will begin by making some observations about \(A_{1}, A_{2}, \ldots, A_{9}\).
+
+    \begin{enumerate}
+        \item No four points may be collinear, as any line \(l\) sharing no common component with \(\gamma_{0}\) and \(\gamma_{\infty}\) intersects with either curve in at most 3 points. By intersecting at four points it is necessary that \(l\) is contained in both \(\gamma_{0}\) and \(\gamma_{\infty}\), which contradicts the statement that these curves intersect in exactly nine points.
+        \item Likewise any 5 points determine a unique conic. If two conics \(\sigma\) and \(\sigma^{\prime}\) contained the same five points Bezout's Theorem would guarantee that \(\sigma\) and \(\sigma^{\prime}\) intersect at a line. This line contains at most 3 points and the other two points determine the other component, so \(\sigma = \sigma^{prime}\).
+    \end{enumerate}
+
+    Now suppose \(A_{1}, A_{2}, A_{3}\) are collinear with a line \(l\). As no four points lie on a line \(A_{4}, A_{5}, \ldots, A_{8}\) do not lie on \(l\) and thus determine a unique conic \(\sigma\). Let \(B\) be a point on \(l\) and \(C\) a point on neither \(l\) or \(\sigma\).
+    Consider the polynomial \(Q = aP + bP_{0} + cP_{\infty}\), \(a, b, c\) not all zero, and impose the restriction that \(Q\) vanishes at \(B\) and \(C\). The polynomial \(Q\) must always exist as the constraints create an underdetermined linear system. The polynomial \(Q\) vanishes at four points on \(l\) and so must vanish on all of \(l\), and \(Q\) vanishes at five points on \(\sigma\) and thus must vanish
+    all points of \(\sigma\). Therefore the curve defined by \(Q\) is the union of \(l\) and \(\sigma\) and importantly cannot contain \(C\), which is a contradiction.
+
+    %
+    % Figure Here
+    %
+
+    Suppose that \(A_{1}, A_{2}, \ldots, A_{6}\) lie on a conic \(\sigma\). No 3 points are collinear so \(\sigma\) must be irreducible. The points \(A_{7}\) and \(A_{8}\) span a line \(l\). Let \(B\) be a point on \(\sigma\) and \(C\) a point on neither \(l\) or \(\sigma\).
+
+    %
+    % Figure Here 
+    %
+
+    As before we can find \(Q = a P + b P_{0} + c P_{\infty}\), \(a, b, c\) not all zero, vanishing at \(A_{1}, A_{2}, \ldots, A_{8}\), \(B\) and \(C\). As \(Q\) vanishes at \(\sigma\) in seven points it must vanish on all of \(\sigma\). Thus the curve defined by \(Q\) is the union of \(\sigma\) and a line that must necessarily be \(l\) as \(Q\) vanishes at \(A_{7}\) and \(A_{8}\). However this curve cannot therefore contain \(C\), another contradiction.
+
+    To finish, let \(l = A_{1}A_{2}\) and \(\sigma\) the conic through \(A_{3}, \ldots, A_{7}\). It follows that \(A_{8}\) is on neither \(\sigma\) or \(l\). Pick two points \(B\) and \(C\) on \(l\) but not \(\sigma\). We may find \(Q = aP + bP_{0} + c P_{\infty}\)  vanishing at \(A_{1}, A_{2}, \ldots, A_{7}\), \(B\) and \(C\).
+    But then the curve defined by \(Q\) is the union of \(l\) and \(\sigma\) and in particular cannot contain \(A_{8}\). This is a contradiction as \(P\), \(P_{0}\) and \(P_{\infty}\) all vanish at \(A_{8}\) so \(Q\) must vanish at \(A_{8}\) also. Hence by contradiction \(P\) is a linear combination of \(P_{0}\) and \(P_{\infty}\).
+\end{proof}
+
+\end{document}
